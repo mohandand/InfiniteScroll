@@ -20,7 +20,7 @@ function Scroll() {
       </div>
     );
   });
-  return <div classname="container">{imageData}</div>;
+  return <div className="container">{imageData}</div>;
 }
 
 export default Scroll;
