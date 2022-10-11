@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Scroll() {
-  useEffect(() => {}, []);
+  const [imageDump, SetImageDump] = useState([]);
+  useEffect(() => {
+    fetchImages();
+  }, []);
 
   const fetchImages = async () => {
     let data = await fetch('https://dog.ceo/api/breeds/image/random');
