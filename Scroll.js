@@ -19,9 +19,12 @@ function Scroll() {
   };
   let imageData = imageDump.map((img, index) => {
     return (
-      <div className="imagebox" key={index}>
-        <img src={img.message} width="200px" height="200px" />
-      </div>
+      <img
+        className="imagebox"
+        src={img.message}
+        width="200px"
+        height="200px"
+      />
     );
   });
   return <div className="container">{imageData}</div>;
