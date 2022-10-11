@@ -3,10 +3,6 @@ import React, { useEffect, useState } from 'react';
 function Scroll() {
   const [imageDump, SetImageDump] = useState([]);
 
-  useEffect(() => {
-    fetchImages();
-  }, []);
-
   const fetchImages = async () => {
     var temp = [];
     for (let i = 0; i < 10; i++) {
@@ -17,6 +13,19 @@ function Scroll() {
     SetImageDump([...temp]);
     console.log(imageDump);
   };
+  useEffect(() => {
+    fetchImages();
+  }, []);
+
+  let res =
+    Math.ceil(window.scrollY + window.innerHeight) >=
+    document.documentElement.scrollHeight
+      ? true
+      : false;
+  if (res) {
+    fetchImages();
+  }
+
   let imageData = imageDump.map((img, index) => {
     return (
       <img
