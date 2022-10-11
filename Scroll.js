@@ -10,8 +10,8 @@ function Scroll() {
   const fetchImages = async () => {
     let data = await fetch('https://dog.ceo/api/breeds/image/random');
     let images = await data.json();
-    console.log(images);
     setTimeout([...images]);
+    console.log(imageDump);
   };
   let imageData = imageDump.map((img, index) => {
     return (
