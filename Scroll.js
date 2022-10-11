@@ -5,7 +5,7 @@ function Scroll() {
 
   useEffect(() => {
     fetchImages();
-  }, [imageDump]);
+  }, []);
 
   const fetchImages = async () => {
     let data = await fetch('https://dog.ceo/api/breeds/image/random');
